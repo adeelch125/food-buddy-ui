@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_buddy/assets/asset_paths.dart';
 import 'package:food_buddy/screens/product_screen.dart';
+import 'package:food_buddy/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     },
     {
       'image': AssetPaths.imgBurger2,
-      'title': 'Hamburger ',
+      'title': 'Hamburger',
       'description': 'Veggie Burger',
     },
     {
@@ -34,6 +35,27 @@ class _HomeScreenState extends State<HomeScreen> {
       'description': 'Fried Chicken Burger',
     },
   ];
+
+  void onTabTapped(int index) {
+    setState(() {
+    });
+    // Navigate to different screens based on index
+    switch (index) {
+      case 0:
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+        break;
+      case 1:
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>const ProfileScreen()));
+
+        break;
+      case 2:
+        print('Chat tapped');
+        break;
+      case 3:
+        print('Favorite tapped');
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -123,9 +145,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.only(right: 20),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 185 / 290,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
+                    childAspectRatio: 185 / 270,
+                    crossAxisSpacing: 3,
+                    mainAxisSpacing: 3,
                   ),
                   itemCount: items.length,
                   itemBuilder: (context, index) {
@@ -141,6 +163,28 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(backgroundColor: Colors.red,
+        currentIndex: selectedIndex,
+        onTap: onTabTapped,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home,color: Colors.blue,),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person,color: Colors.blue,),
+            label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat,color: Colors.blue,),
+            label: 'Chat',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite,color: Colors.blue,),
+            label: 'Favorite',
+          ),
+        ],
+      ),
     );
   }
 
@@ -155,7 +199,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 5),
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
           decoration: BoxDecoration(
             color: isSelected ? Colors.red : Colors.white,
             borderRadius: BorderRadius.circular(15),
@@ -181,7 +225,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }) {
     return GestureDetector(
       onTap: () {
-Navigator.push(context,MaterialPageRoute(builder: (context)=>ProductScreen()));
+        Navigator.push(context,MaterialPageRoute(builder: (context)=>ProductScreen()));
       },
       child: Container(
         height: 290,
@@ -203,9 +247,13 @@ Navigator.push(context,MaterialPageRoute(builder: (context)=>ProductScreen()));
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(
-                image,
-                fit: BoxFit.fitHeight,
+              SizedBox(
+                height: 120,
+                width: 120,
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.fitHeight,
+                ),
               ),
               const SizedBox(height: 10),
               Text(
