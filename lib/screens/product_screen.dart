@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_buddy/assets/asset_paths.dart';
+import 'package:food_buddy/screens/alert_dailog_screen.dart';
 import 'package:food_buddy/screens/home_screen.dart';
 
 class ProductScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _ProductScreenState extends State<ProductScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 20),
+        padding: const EdgeInsets.only(left: 20, top: 20, right: 10),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,8 +28,10 @@ class _ProductScreenState extends State<ProductScreen> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomeScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
                     },
                     child: const SizedBox(
                       height: 20,
@@ -58,8 +61,8 @@ class _ProductScreenState extends State<ProductScreen> {
               ),
               const Text(
                 "The Cheeseburger Wendy's Burger is a classic fast food burger that packs a punch of flavor in every bite.\n"
-                    "Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce,\n"
-                    "ripe tomato, and crunchy pickles.",
+                "Made with a juicy beef patty cooked to perfection, it's topped with melted American cheese, crispy lettuce,\n"
+                "ripe tomato, and crunchy pickles.",
               ),
               const SizedBox(height: 40),
               Row(
@@ -150,42 +153,69 @@ class _ProductScreenState extends State<ProductScreen> {
               const SizedBox(
                 height: 70,
               ),
-               Row(
+              Row(
                 children: [
                   Container(
                     height: 70,
                     width: 100,
                     decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(20)
-                    ),
-                    child: const Center(child: Text('\$8.24',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),)),
-
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: const [
+                        BoxShadow(
+                        color: Color(0x3F000000),
+                    blurRadius: 30,
+                    offset: Offset(0, 9),
+                    spreadRadius: 0,
+                  )
+                ],
+              ),
+                child: const Center(
+                        child: Text(
+                      '\$8.24',
+                      style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    )),
                   ),
                   const SizedBox(
                     width: 30,
                   ),
-
                   GestureDetector(
-                    onTap: (){
-
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>AlertDialogScreen()));
                     },
                     child: Container(
                       height: 70,
                       width: 200,
                       decoration: BoxDecoration(
                           color: Colors.brown,
-                          borderRadius: BorderRadius.circular(20)
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: const [
+                          BoxShadow(
+                          color: Color(0x3F000000),
+                      blurRadius: 30,
+                      offset: Offset(0, 9),
+                      spreadRadius: 0,
+                    )
+                          ],
                       ),
-                      child: const Center(child: Text('ORDER NOW',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),)),
-
+                      child: const Center(
+                          child: Text(
+                        'ORDER NOW',
+                        style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      )),
                     ),
                   )
-
-
                 ],
               )
-
             ],
           ),
         ),

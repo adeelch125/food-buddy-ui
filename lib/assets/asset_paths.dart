@@ -10,4 +10,7 @@ class AssetPaths{
   static const imgBurger5 = "assets/img_burger5.png";
   static const imgSearch = "assets/img_search.png";
   static const imgbackButton = "assets/back-button.png";
+  static const imgCorrect = "assets/img_correct.png";
+  static const imgEdit = "assets/img_edit.png";
+  static const imgSignOut = "assets/sign-out.png";
 }

@@ -37,15 +37,16 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   void onTabTapped(int index) {
-    setState(() {
-    });
+    setState(() {});
     // Navigate to different screens based on index
     switch (index) {
       case 0:
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomeScreen()));
         break;
       case 1:
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>const ProfileScreen()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ProfileScreen()));
 
         break;
       case 2:
@@ -163,24 +164,37 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(backgroundColor: Colors.red,
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.red,
         currentIndex: selectedIndex,
         onTap: onTabTapped,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home,color: Colors.blue,),
+            icon: Icon(
+              Icons.home,
+              color: Colors.red,
+            ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person,color: Colors.blue,),
+            icon: Icon(
+              Icons.person,
+              color: Colors.red,
+            ),
             label: 'Profile',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat,color: Colors.blue,),
+            icon: Icon(
+              Icons.chat,
+              color: Colors.red,
+            ),
             label: 'Chat',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite,color: Colors.blue,),
+            icon: Icon(
+              Icons.favorite,
+              color: Colors.red,
+            ),
             label: 'Favorite',
           ),
         ],
@@ -225,7 +239,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context,MaterialPageRoute(builder: (context)=>ProductScreen()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => ProductScreen()));
       },
       child: Container(
         height: 290,
@@ -270,7 +285,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
