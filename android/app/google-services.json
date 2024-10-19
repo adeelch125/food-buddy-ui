@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "567472026305",
+    "project_id": "food-buddy-1bfc4",
+    "storage_bucket": "food-buddy-1bfc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567472026305:android:d5eeb82cc4e1097301da40",
+        "android_client_info": {
+          "package_name": "com.example.food_buddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBra5l0dZX4vSUuSvS9xdbN9CCbEFodDYs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

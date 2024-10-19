@@ -1,8 +1,21 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:food_buddy/screens/splash_screen.dart';
 
-void main() {
+const FirebaseOptions firebaseOptions =FirebaseOptions(
+    apiKey: 'AIzaSyBra5l0dZX4vSUuSvS9xdbN9CCbEFodDYs',
+    appId: "1:567472026305:android:d5eeb82cc4e1097301da40",
+    messagingSenderId: '567472026305',
+    projectId: 'food-buddy-1bfc4',
+);
+
+
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: firebaseOptions);
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -13,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Food Buddy',
       theme: ThemeData(
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
