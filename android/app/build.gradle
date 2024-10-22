@@ -5,8 +5,10 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
     id 'com.google.gms.google-services'}
 dependencies{
-    implementation platform('com.google.firebase:firebase-bom:33.4.0')
+    implementation platform('com.google.firebase:firebase-bom:33.5.0')
     implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.android.gms:play-services-measurement-api:22.1.2'
+
 
 }
 
@@ -43,10 +45,10 @@ android {
         applicationId = "com.example.food_buddy"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutterVersionCode.toInteger()
-        versionName = flutterVersionName
+        minSdkVersion 23  // Change this from 21 to 23
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
