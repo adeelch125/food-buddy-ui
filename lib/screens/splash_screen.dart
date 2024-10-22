@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_buddy/assets/asset_paths.dart';
+import 'package:food_buddy/screens/login_screen.dart';
 import 'package:food_buddy/screens/next_screen.dart';
 
 import 'home_screen.dart'; // Replace with your next screen
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(const Duration(seconds: 3), () {});
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) =>  HomeScreen()), // Replace with your next screen
+      MaterialPageRoute(builder: (context) =>  LoginScreen()), // Replace with your next screen
     );
   }
 
